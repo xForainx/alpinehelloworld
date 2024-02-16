@@ -1,7 +1,7 @@
 pipeline {
     agent none
     environment {
-        DOCKERHUB_AUTH = credentials('01d9230d-f91c-4729-ab47-347dcb8f8450')
+        DOCKERHUB_AUTH = credentials('e7a43fd0-0579-4387-83c4-01d4483a3002')
         ID_DOCKER = "${DOCKERHUB_AUTH_USR}"
         PORT_EXPOSED = "80"
     }

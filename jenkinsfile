@@ -3,7 +3,6 @@ pipeline {
     environment {
         DOCKERHUB_AUTH = credentials('e7a43fd0-0579-4387-83c4-01d4483a3002')
         ID_DOCKER = "${DOCKERHUB_AUTH_USR}"
-        PW_DOCKER = "${DOCKERHUB_AUTH_PSW}"
         PORT_EXPOSED = "80"
     }
 
@@ -59,8 +58,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        echo "mon pwd est ${PW_DOCKER} et mon ID est ${ID_DOCKER}"
-                        docker login -u $DOCKERHUB_AUTH_USR -p ${PW_DOCKER}
+                        docker login -u $DOCKERHUB_AUTH_USR -p $DOCKERHUB_AUTH_PSW
                         docker push ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG
                     '''
                 }

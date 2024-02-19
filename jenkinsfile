@@ -68,7 +68,7 @@ pipeline {
         stage ('Deploy in staging') {
             agent any
             environment {
-                HOSTNAME_DEPLOY_STAGING = "ec2-52-90-186-44.compute-1.amazonaws.com"
+                HOSTNAME_DEPLOY_STAGING = "ec2-54-87-152-121.compute-1.amazonaws.com"
             }
             steps {
                 sshagent(credentials: ['SSH_AUTH_SERVER']) {
@@ -93,7 +93,7 @@ pipeline {
         stage ('Deploy in prod') {
             agent any
             environment {
-                HOSTNAME_DEPLOY_PROD = "ec2-54-90-173-51.compute-1.amazonaws.com"
+                HOSTNAME_DEPLOY_PROD = "ec2-107-22-94-24.compute-1.amazonaws.com"
             }
             steps {
                 sshagent(credentials: ['SSH_AUTH_PROD']) {

@@ -1,3 +1,6 @@
+/* import shared library */
+@Library('shared-library')_
+
 pipeline {
     agent none
     environment {
@@ -143,11 +146,12 @@ pipeline {
     }
 
     post {
-        success {
+        // Lignes ci-dessous remplacées par lignes au dessus (shared-library)
+/*        success {
             slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
         failure {
             slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
-    }
+    }*/
 }
